@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home page</title>
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="stylesheet.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script type="text/javascript" src="databind.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="C:\Users\ELCOT\Desktop\student information\validation.js"></script>
+</head>
+
+<body>
+    <div class="container" id="containerid">
+
+        <div class="bg-dark text-white">
+            <h1>Student Information</h1>
+        </div>
+
+        <div class="row">
+            <div class="col-11"></div>
+            <div class="col-1 button-padding-left">
+                <button type="button" onclick="addfunction()" class="btn btn-primary" id="add-button" value="click">Add</button>
+            </div>
+        </div>
+
+        <div class="container mt-3">
+            <table class="table table-hover">
+
+                <thead>
+                    <tr>
+                        <th class="header">Firstname</th>
+                        <th class="header">Lastname</th>
+                        <th class="header">Gender</th>
+                        <th class="header">Date of birth</th>
+                        <th class="header">Mobile number</th>
+                        <th class="header-email">Email</th>
+                        <th class="header-department">Department</th>
+                        <th class="header">Year</th>
+                        <th class="header-action">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+
+
+        <div id="myModal-delete" class="modal fade" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Delete Record</h5>
+                        <button type="button" id="close-button-delete" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="container-block" style="text-align: center;">
+                        <p style="text-align: center;">Are you sure you want to delete this record ?</p>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" id="concel-button-popup" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                        <button type="button" id="delete-button-popup" class="btn btn-primary">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="myModal-view" class="modal fade" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content modal-content-align">
+                    <div class="modal-header">
+                        <h5 class="modal-title">View Information</h5>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container-block">
+                            <div class="row">
+                                <label class="col-sm-6  p-3 field-header">
+                                    Firstname:
+                                </label>
+                                <label class="col-sm-6  p-3 field-value" id="first-value-container">
+                                </label>
+                            </div>
+                            <div class="row">
+                                <label class="col-sm-6  p-3 field-header">
+                                    Lirstname:
+                                </label>
+                                <label class="col-sm-6  p-3 field-value" id="last-value-container">
+                                </label>
+                            </div>
+                            <div class="row">
+                                <label class="col-sm-6  p-3 field-header">
+                                    Gender:
+                                </label>
+                                <label class="col-sm-6  p-3 field-value" id="gender-value-container">
+                                </label>
+                            </div>
+                            <div class="row">
+                                <label class="col-sm-6  p-3 field-header">
+                                    Date of bith:
+                                </label>
+                                <label class="col-sm-6  p-3 field-value" id="dob-value-container">
+                                </label>
+                            </div>
+                            <div class="row">
+                                <label class="col-sm-6  p-3 field-header">
+                                    Mobile number:
+                                </label>
+                                <label class="col-sm-6  p-3 field-value" id="mobilenumber-value-container">
+                                </label>
+                            </div>
+                            <div class="row">
+                                <label class="col-sm-6  p-3 field-header">
+                                    Email:
+                                </label>
+                                <label class="col-sm-6  p-3 field-value" id="email-value-container">
+                                </label>
+                            </div>
+                            <div class="row">
+                                <label class="col-sm-6  p-3 field-header">
+                                    Department:
+                                </label>
+                                <label class="col-sm-6  p-3 field-value" id="dept-value-container">
+                                </label>
+                            </div>
+                            <div class="row">
+                                <label class="col-sm-6  p-3 field-header">
+                                    Year:
+                                </label>
+                                <label class="col-sm-6  p-3 field-value" id="year-value-container">
+                                </label>
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById('id01');
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+        $(".btn").click(function() {
+            $("#myModal").modal('show');
+        });
+    </script>
+
+    <!-- Modal HTML -->
+    <div id="myModal-add" class="modal fade" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <button type="button" class="close" id="close-button-add" onclick="emptyformstate();fieldremovevalidation();" data-dismiss="modal">&times;</button>
+                <div class="continer mainblock">
+                    <h4>Student Form</h4>
+
+                    <div class="container">
+                        <form action="" autocomplete="on">
+                            <div class="container">
+                                <label for="Firstname" class="label">Firstname:</label>
+                                <input type="text" class="form-control" id="Firstname" placeholder="Enter Firstname" name="text">
+                                <span class="error-firstname"></span>
+                            </div>
+                            <div class="container">
+                                <label for="Lastname" class="label">Lastname:</label>
+                                <input type="text" class="form-control" id="Lastname" placeholder="Enter Lastname" name="pswd">
+                                <span class="error-lastname"></span>
+                            </div>
+                            <div class="container">
+                                <label for="Gender" class="label">Gender:</label>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input" id="radio1" name="optradio" value="Male">
+                                    <label class="form-check-label" for="radio1">Male</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input" id="radio2" name="optradio" value="Female">
+                                    <label class="form-check-label" for="radio2">Female</label>
+                                </div>
+                                <span class="error-gender"></span>
+                            </div>
+                            <div class="container">
+                                <label for="dateofbirth" class="label">Datebirth:</label>
+                                <input type="date" class="form-control" id="Dateofbirth" placeholder="Enter dateofbirth" name="dateofbirth">
+                                <span class="error-dob"></span>
+                            </div>
+                            <div class="container">
+                                <label for="mobile" class="label">MobilePhone:</label>
+                                <input type="number" class="form-control" id="Mobilenumber" placeholder="Enter MobilePhone" name="MobilePhone" pattern="[0-9]{10}">
+                                <span class="error-mobileno"></span>
+                            </div>
+                            <div class="container">
+                                <label for="Email" class="label">Email:</label>
+                                <input type="email" class="form-control" id="Email" placeholder="Enter Email" name="Email">
+                                <span class="error-email"></span>
+                            </div>
+                            <div class="container">
+                                <label for="department" class="label">Department:</label>
+                                <input type="text" class="form-control" id="Department" placeholder="Enter Department" name="Department">
+                                <span class="error-department"></span>
+                            </div>
+                            <div class="container">
+                                <label for="Year" class="label">Year:</label>
+                                <input type="number" class="form-control" id="Year" placeholder="Enter Year" name="Year" min="1950" max="2023">
+                                <span class="error-year"></span>
+                            </div>
+                            <div class="container container-register-button">
+
+                                <button type="button" onclick="isvalidation()" class="btn btn-primary" id="registerbutton">Save</button>
+
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+
+
+                <div class="modal-footer" id="buttons-remove-addtime">
+                    <button type="button" onclick="emptyformstate()" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button type="button" onclick="datareplace()" class="btn btn-primary">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>

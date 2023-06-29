@@ -1,0 +1,254 @@
+.col,
+h1 {
+    text-align: center;
+}
+
+.mainblock {
+    border: none;
+    background-color: #2222;
+    margin: 60px;
+    border-radius: 10px;
+}
+
+#registerbutton {
+    margin-top: 5%;
+    margin-left: 30%;
+    width: auto;
+}
+
+.container-register-button {
+    text-align: center;
+}
+
+.mainblock h4 {
+    text-align: center;
+}
+
+#add-button {
+    float: right;
+}
+
+@media screen and (min-width:992px) {
+    .mainblock {
+        margin-left: 35%;
+        margin-right: 35%;
+    }
+}
+
+@media screen and (min-width:768px) {
+    .mainblock {
+        margin-left: 30%;
+        margin-right: 30%;
+    }
+}
+
+@media screen and (min-width:1440px) {
+    .mainblock {
+        margin-left: 37%;
+        margin-right: 37%;
+    }
+}
+
+@media screen and (min-width:2200px) {
+    .mainblock {
+        margin-left: 40%;
+        margin-right: 40%;
+    }
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    gap: 5px;
+    background-color: #2222;
+    padding: 1px;
+    border-bottom-style: solid;
+    border-width: 1px;
+    border: none;
+    border-color: white;
+    margin-top: 12px;
+}
+
+.grid-container>div {
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    font-size: large;
+    border-bottom-style: solid;
+    border-width: 1px;
+}
+
+.head {
+    font-weight: bolder;
+}
+
+.firstbutton {
+    margin-right: 4px;
+    margin-top: 5px;
+}
+
+.lastbutton {
+    margin-left: -1px;
+    margin-bottom: 4px;
+}
+
+@media screen and (min-width:320px) {
+    .firstbutton {
+        margin-bottom: 4px;
+    }
+    .lastbutton {
+        margin-top: 4px;
+    }
+    #containerid {
+        width: 100%;
+        margin-top: 10%;
+    }
+}
+
+.button-padding-left {
+    padding-right: 25px;
+}
+
+.label-container {
+    font-weight: bold;
+}
+
+.field-header {
+    max-width: 35% !important;
+    font-weight: bold;
+}
+
+.row {
+    margin-left: 5% !important;
+}
+
+.field-value {
+    max-width: 60%;
+}
+
+#label-container {
+    font-weight: bold;
+}
+
+.view {
+    position: relative;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.container header,
+.l {
+    width: 50%;
+}
+
+.mainblock {
+    padding: 20px;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+@media screen and (min-width:320px) and (max-width:425px) {
+    #email,
+    #dept,
+    #value {
+        display: none;
+    }
+    .grid-container {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        gap: 5px;
+        background-color: #2222;
+        padding: 1px;
+        border-bottom-style: solid;
+        border-width: 1px;
+        border: none;
+        border-color: white;
+        margin-top: 12px;
+    }
+}
+
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: #adb5bd;
+    opacity: 0.9;
+    padding-top: 50px;
+}
+
+.modal-header {
+    display: block !important;
+    text-align: center;
+}
+
+
+/* Modal Content/Box */
+
+.close {
+    position: absolute;
+    right: 35px;
+    top: 15px;
+    font-size: 40px;
+    font-weight: bold;
+    color: black;
+}
+
+.close:hover,
+.close:focus {
+    color: #f44336;
+    cursor: pointer;
+}
+
+
+/* Clear floats */
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+
+/* Change styles for cancel button and delete button on extra small screens */
+
+@media screen and (max-width: 300px) {
+    .cancelbtn,
+    .deletebtn {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width:320px) and (max-width:425px) {
+    .header-email,
+    .header-department,
+    .email-data,
+    .department-data {
+        display: none;
+    }
+    .header-action,
+    #buttonsid {
+        text-align: center;
+    }
+}
+
+@media screen and (min-width:768px) {
+    .header-action,
+    #buttonsid,
+    .header-email {
+        text-align: center;
+    }
+}
+
+#buttons-remove-addtime {
+    text-align: right;
+}
